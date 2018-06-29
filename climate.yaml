@@ -1,0 +1,63 @@
+
+- platform: sensibo
+  api_key: !secret sensibo_api_key 
+  
+- platform: generic_thermostat
+  name: Kjellerstue
+  heater: switch.varme_kjellerstue
+  target_sensor: sensor.temp_kjellerstue_temperature
+  min_temp: 15
+  max_temp: 23
+  target_temp: 17
+  cold_tolerance: 0.2
+  hot_tolerance: 0.2
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  away_temp: 16
+  
+- platform: generic_thermostat
+  name: Gang
+  heater: switch.varme_gang
+  target_sensor: sensor.trappegang_temperature
+  min_temp: 15
+  max_temp: 23
+  target_temp: 17
+  cold_tolerance: 0.2
+  hot_tolerance: 0.2
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  away_temp: 16
+- platform: generic_thermostat
+  name: Soverom_km
+  heater: switch.varme_km
+  target_sensor: sensor.temp_km_temperature
+  min_temp: 15
+  max_temp: 23
+  target_temp: 17
+  cold_tolerance: 0.5
+  hot_tolerance: 0.5
+  min_cycle_duration:
+    seconds: 300
+  keep_alive:
+    minutes: 3
+  away_temp: 16
+
+  
+- platform: generic_thermostat
+  name: Soverom KM
+  heater: switch.varme_KM
+  target_sensor: sensor.temp_KM
+  min_temp: 15
+  max_temp: 23
+  target_temp: 17
+  cold_tolerance: 0.2
+  hot_tolerance: 0.2
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  away_temp: 16

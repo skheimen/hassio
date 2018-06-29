@@ -1,0 +1,91 @@
+- platform: yr
+
+- platform: rfxtrx
+  automatic_add: false
+  devices:
+    08500707980080b179:
+      name: Fryseboks
+    085009089460008579:
+      name: Ute
+    0a520a04900100f0350179:
+      name: temp_km
+    08500905961100d279:
+      name: temp_kjellerstue
+    0850090995c200f379:
+      name: temp_tv
+    0a520901970000c1400179:
+      name: temp_kjeller
+- platform: tibber
+  access_token: !secret tibber_api
+- platform: filter
+  name: "Kjeller"
+  entity_id: sensor.temp_kjeller_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 10.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:5
+      precision: 1
+- platform: filter
+  name: "Fryseboks"
+  entity_id: sensor.fryseboks_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 1
+- platform: filter
+  name: "Utetemperatur"
+  entity_id: sensor.ute_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 1
+- platform: filter
+  name: "TV-stue"
+  entity_id: sensor.temp_tv_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 1      
+- platform: filter
+  name: "Kjellerstue"
+  entity_id: sensor.temp_kjellerstue_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 1    
+- platform: filter
+  name: "Barnerom"
+  entity_id: sensor.temp_km_temperature
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 1       

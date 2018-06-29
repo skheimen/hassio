@@ -1,0 +1,89 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 0
+  unit_system: metric
+  time_zone: Europe/Oslo
+  customize: !include customize.yaml
+
+rfxtrx:
+  device: /dev/ttyUSB0
+zwave:
+  usb_path: /dev/ttyACM0
+
+verisure:
+  username: !secret verisure_username
+  password: !secret verisure_passwd
+  code_digits: 6
+
+notify:
+  - name: Hassio
+    platform: pushbullet
+    api_key: !secret pushbullet_api_key 
+
+google:
+  client_id: !secret google_client_id 
+  client_secret: !secret google_client_secret
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: hassio
+  username: !secret influxdb_username
+  password: !secret influxdb_passwd
+  max_retries: 3
+  default_measurement: state
+neato:
+  username: !secret neato_username
+  password: !secret neato_passwd
+
+panel_iframe:
+  configurator:
+    title: 'Configurator'
+    url: !secret configurator_url
+    icon: mdi:wrench
+  nodered_ui:
+    title: 'Node-RED Dashboard'
+    url: !secret nodered_ui 
+    icon: mdi:nodejs
+  grafana:
+    title: Grafana
+    icon: mdi:chart-timeline
+    url: http://heimen.duckdns.org:3000
+  influxdb:
+    title: InfluxDB
+    icon: mdi:chart-areaspline
+    url: http://heimen.duckdns.org:8888
+
+frontend:
+config:
+http:
+   base_url: !secret http_base_url
+   ssl_certificate: /ssl/fullchain.pem
+   ssl_key: /ssl/privkey.pem
+   api_password: !secret http_passwd
+
+updater:
+
+discovery:
+
+conversation:
+
+history:
+logbook:
+map:
+sun:
+
+tts:
+  - platform: google
+
+cloud:
+group: !include groups.yaml
+automation: !include automations.yaml
+switch: !include switches.yaml
+script: !include scripts.yaml
+device_tracker: !include device_tracker.yaml
+sensor: !include sensors.yaml
+climate: !include climate.yaml
+input_number: !include input_number.yaml

@@ -1,0 +1,21 @@
+- platform: rfxtrx
+  automatic_add: true
+  devices:
+    0b11000575bc0cfe07010f70:
+      name: varme_kjellerstue
+    0b11000267bc0cfe07010f70:
+      name: varme_gang
+    0b11000695bc0cfe06010f70:
+      name: varme_KM
+    0b11000349bc0cfe02010f70:
+      name: varme_EE
+    0b11000634bc0cfe05010f70:
+      name: lampe_stue
+    0b11000406bc0cfe02010f70:
+      name: lampe_hjørne
+    0b11000268bc0cfe08010f70:
+      name: lampe_spisestue
+    0b1100b00009d81202010f70:
+      name: Lys TV-stue
+    0b1100b10009d81201010f70 :
+      name: Lys spisestue

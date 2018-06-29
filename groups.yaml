@@ -1,0 +1,73 @@
+
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.kitchen
+      - group.awesome_people
+      - group.climate
+      - group.hjemme
+      - group.stue
+      - group.soverom
+      - group.kjkken
+      - group.gang
+      - group.kjeller
+      - group.switches
+      - group.vacuum
+  Hjemme:
+    view: no
+    entities:
+      - alarm_control_panel.vre_haukeligate_alarm
+      - lock.hoveddr
+      - lock.kjellerdr
+      - binary_sensor.kjkkendr
+      - sensor.utetemperatur
+      - sensor.electricity_price_vre_haukeligate_3
+  Stue:
+    view: no
+    entities:
+      - climate.varmepumpe
+      - sensor.temp_tv_temperature
+      - input_number.settpunkt_stue
+      - switch.lys_tvstue
+      - switch.lys_spisestue
+  Kjøkken:
+    view: no
+    entities:
+      - sensor.kjkken_temperature 
+      - light.kjkken
+      - light.benkeplate
+      - media_player.kjkken
+
+  Soverom:
+    view: no
+    entities:
+      - climate.soverom_ee
+      - climate.soverom_km
+  Gang:
+    view: no
+    entities: 
+      - climate.gang
+      - light.2gang
+      - light.bakgang
+  Kjeller:
+    view: no
+    entities:
+      - climate.kjellerstue
+      - sensor.fryseboks_temperature
+      - sensor.temp_kjeller
+  Vacuum:
+    view: no
+    entities:
+      - vacuum.robus
+      - camera.robus_cleaning_map    
+  switches:
+    view: no
+    entities:
+      - switch.varme_kjellerstue
+      - switch.varme_gang
+      - switch.varme_km
+      - switch.varme_ee
+      - switch.lampe_stue
+      - switch.lampe_hjrne
+      - switch.lampe_spisestue
