@@ -64,7 +64,7 @@
       time_constant: 10
     - filter: time_simple_moving_average
       window_size: 00:05
-      precision: 1      
+      precision: 1
 - platform: filter
   name: "Kjellerstue"
   entity_id: sensor.temp_kjellerstue_temperature
@@ -76,7 +76,7 @@
       time_constant: 10
     - filter: time_simple_moving_average
       window_size: 00:05
-      precision: 1    
+      precision: 1
 - platform: filter
   name: "Barnerom"
   entity_id: sensor.temp_km_temperature
@@ -88,4 +88,4 @@
       time_constant: 10
     - filter: time_simple_moving_average
       window_size: 00:05
-      precision: 1       
+      precision: 1     
